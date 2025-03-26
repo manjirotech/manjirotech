@@ -1,0 +1,354 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1.2rem 2rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(245, 245, 240, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(164, 131, 52, 0.05);
+}
+
+.navbarGlow {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: radial-gradient(ellipse at top, rgba(164, 131, 52, 0.15), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.scrolled {
+  background: rgba(245, 245, 240, 0.95);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 0.8rem 2rem;
+  border-bottom: 1px solid rgba(164, 131, 52, 0.1);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.logoShape {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logoImage{
+  width: 90%;
+  height: 90%;
+  object-fit: cover;
+}
+
+@keyframes pulseLogo {
+  0% {
+    box-shadow: 0 5px 15px rgba(164, 131, 52, 0.3);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(164, 131, 52, 0.5);
+  }
+}
+
+.logoRing {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  animation: rotateLogo 10s linear infinite;
+}
+
+@keyframes rotateLogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.logoShape:before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  animation: shimmerLogo 6s infinite;
+}
+
+@keyframes shimmerLogo {
+  0% {
+    transform: rotate(45deg) translateX(-100%);
+  }
+  50% {
+    transform: rotate(45deg) translateX(100%);
+  }
+  100% {
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+
+.logoText {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: white;
+  position: relative;
+  z-index: 2;
+}
+
+.logoTextContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logoFullText {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  background: linear-gradient(90deg, var(--gold), #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  line-height: 1.2;
+}
+
+.logoSubText {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.navLinksDesktop {
+  display: none;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.navItem {
+  position: relative;
+}
+
+.activeNavItem .navLink {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.navLink {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--black);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem 0;
+  display: inline-block;
+}
+
+.activeIndicator {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), #d4af37);
+  border-radius: 3px;
+}
+
+.navLink:hover {
+  color: var(--gold);
+}
+
+.ctaButton {
+  background: linear-gradient(90deg, var(--gold), #d4af37);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(164, 131, 52, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton:before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  animation: shimmerButton 3s infinite;
+}
+
+@keyframes shimmerButton {
+  0% {
+    transform: rotate(45deg) translateX(-100%);
+  }
+  100% {
+    transform: rotate(45deg) translateX(100%);
+  }
+}
+
+.mobileMenuButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+.menuBar {
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), #d4af37);
+  border-radius: 3px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menuBar.open:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.menuBar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.menuBar.open:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  height: 100vh;
+  background: rgba(245, 245, 240, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mobileMenuContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.mobileNavItem {
+  position: relative;
+  padding-left: 1rem;
+}
+
+.activeMobileItem {
+  border-left: 3px solid var(--gold);
+}
+
+.activeMobileItem .mobileNavLink {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.mobileNavLink {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--black);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+
+.mobileNavLink:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), #d4af37);
+  transition: width 0.3s ease;
+}
+
+.mobileNavLink:hover {
+  color: var(--gold);
+}
+
+.mobileNavLink:hover:after {
+  width: 100%;
+}
+
+.mobileCta {
+  background: linear-gradient(90deg, var(--gold), #d4af37);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  margin-top: 1rem;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(164, 131, 52, 0.2);
+  align-self: center;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 1024px) {
+  .mobileMenuButton {
+    display: none;
+  }
+
+  .navLinksDesktop {
+    display: flex;
+  }
+}
+
