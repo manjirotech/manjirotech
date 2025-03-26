@@ -8,7 +8,7 @@ const WhyChooseUs = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.2 })
   const controls = useAnimation()
-  const [hoveredIndex, setHoveredIndex] = useState(null)
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   useEffect(() => {
     if (isInView) {
@@ -118,7 +118,7 @@ const WhyChooseUs = () => {
           initial="hidden"
           animate={controls}
         >
-          {reasons.map((reason, i) => (
+          {reasons.map((reason: typeof reasons[number], i: number) => (
             <motion.div
               key={i}
               className={`${styles.reasonBox} ${styles[reason.animation]}`}

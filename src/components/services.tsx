@@ -4,12 +4,28 @@ import { useRef, useState, useEffect } from "react"
 import { motion, useInView, AnimatePresence, useAnimation } from "framer-motion"
 import styles from "./services.module.css"
 
+const tabNames: Record<string, string> = {
+  content: "Content & Marketing",
+  design: "Graphic & Design",
+  development: "Web & App Development",
+  media: "Editing & Media",
+}
+
+const tabColors: Record<string, string> = {
+  content: "#4A90E2",
+  design: "#50E3C2",
+  development: "#F5A623",
+  media: "#D0021B",
+}
+
+type TabKey = keyof typeof tabNames;
+
 const Services = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.1 })
   const controls = useAnimation()
-  const [activeTab, setActiveTab] = useState("content")
-  const [hoveredCard, setHoveredCard] = useState(null)
+  const [activeTab, setActiveTab] = useState<TabKey>('content');
+  const [hoveredCard, setHoveredCard] = useState<string | null>(null)
 
   useEffect(() => {
     if (isInView) {
@@ -19,7 +35,7 @@ const Services = () => {
     }
 
     // Auto-rotate tabs every 8 seconds
-    const tabs = ["content", "design", "development", "media"]
+    const tabs: TabKey[] = ["content", "design", "development", "media"]
     const interval = setInterval(() => {
       const currentIndex = tabs.indexOf(activeTab)
       const nextIndex = (currentIndex + 1) % tabs.length
@@ -29,7 +45,7 @@ const Services = () => {
     return () => clearInterval(interval)
   }, [isInView, controls, activeTab])
 
-  const services = {
+  const services: Record<TabKey, string[]> = {
     content: [
       "Content Marketing",
       "Script Marketing",
@@ -73,20 +89,6 @@ const Services = () => {
       "Thumbnails and SEO for Videos",
       "Video Captioning/Subtitling",
     ],
-  }
-
-  const tabNames = {
-    content: "Content & Marketing",
-    design: "Graphic & Design",
-    development: "Web & App Development",
-    media: "Editing & Media",
-  }
-
-  const tabColors = {
-    content: "#4A90E2",
-    design: "#50E3C2",
-    development: "#F5A623",
-    media: "#D0021B",
   }
 
   const containerVariants = {
@@ -153,7 +155,7 @@ const Services = () => {
         </motion.p>
 
         <div className={styles.tabs}>
-          {Object.keys(tabNames).map((tab) => (
+          {Object.keys(tabNames).map((tab: any) => (
             <motion.button
               key={tab}
               className={`${styles.tabButton} ${activeTab === tab ? styles.activeTab : ""}`}
@@ -187,7 +189,7 @@ const Services = () => {
             exit={{ opacity: 0, y: 20 }}
             transition={{ duration: 0.3 }}
           >
-            {services[activeTab].map((service, i) => (
+            {services[activeTab].map((service: string, i: number) => (
               <motion.div
                 key={i}
                 className={styles.serviceCard}
