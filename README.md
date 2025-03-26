@@ -1,36 +1,92 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Manjiro Tech Services Website
 
-First, run the development server:
+Welcome to the **Manjiro Tech Services** official website repository! 🚀
 
+## 🖥️ Live Demo
+[Visit the Live Website](<INSERT_WEBSITE_URL_HERE>)
+
+---
+
+## 📌 About the Website
+This is the official website for **Manjiro Tech Services**, a next-generation provider of IT and digital marketing solutions. The website is designed to reflect the modern, tech-focused identity of the company, with creative animations, smooth transitions, and a sleek UI.
+
+The site is built to impress potential clients and generate leads through interactive design and clear communication of services.
+
+---
+
+## 🏆 Key Features
+✅ **Modern UI/UX** – Clean, modern design using glassmorphism and dynamic effects  
+✅ **Fully Responsive** – Optimized for all screen sizes  
+✅ **Interactive Animations** – Subtle motion, glowing effects, and hover interactions  
+✅ **Fast and Secure** – Efficient code and secure structure  
+✅ **SEO-Optimized** – Designed to rank higher on search engines  
+
+---
+
+## 🛠️ Technologies Used
+- **HTML5, CSS3, JavaScript**
+- **React.js** (or appropriate framework)
+- **Tailwind CSS** (for styling)
+- **Framer Motion** (for animations)
+- **GitHub Pages** (for deployment)
+
+---
+
+## 🖋️ Fonts and Color Palette
+**Fonts:**  
+- **Plus Jakarta Sans** – Main Titles and Important Texts  
+- **Poppins** – Body Text and Subheadings  
+
+**Color Palette:**  
+| Color | Hex Code |
+|-------|----------|
+| Gold | `#a48334` |
+| Black | `#040404` |
+| Gray 1 | `#7b7c7c` |
+| Gray 2 | `#7c8484` |
+| White | `#FAFAFA` |
+
+---
+
+## 🚀 How to Run the Project
+1. **Clone the repository**:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/username/repository.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Navigate to the project folder**:
+```bash
+cd repository
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Install dependencies**:
+```bash
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Start the development server**:
+```bash
+npm run dev
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📄 License
+This project is licensed under the **MIT License**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🤝 Contributing
+We welcome contributions! Please feel free to submit a Pull Request.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📧 Contact
+For questions or collaboration inquiries, reach out at:  
+✉️ **info@manjirotech.com**  
+🌐 **[www.manjirotech.com](https://www.manjirotech.com)**  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+✨ **Elevate Your Brand with Manjiro Tech!**  
