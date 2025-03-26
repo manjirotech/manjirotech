@@ -9,6 +9,7 @@ import Services from "@/components/services"
 import ClientJourney from "@/components/client-journey"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
+import { GSAPInit } from "@/components/gsap-init"
 import styles from "./page.module.css"
 
 export default function Home() {
@@ -51,6 +52,7 @@ export default function Home() {
   return (
     <main className={`${styles.main} ${isLoaded ? styles.loaded : ""}`}>
       <Navbar onNavClick={scrollToSection} />
+      <GSAPInit />
 
       <section ref={heroRef} id="hero">
         <Hero />
