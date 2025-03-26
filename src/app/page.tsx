@@ -9,24 +9,16 @@ import Services from "@/components/services"
 import ClientJourney from "@/components/client-journey"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
-import { GSAPInit } from "@/components/gsap-init"
+import dynamic from "next/dynamic"
 import styles from "./page.module.css"
+
+const GSAPInit = dynamic(() => import("@/components/gsap-init"), { ssr: false });
 
 export default function Home() {
   const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
-
-    // Initialize GSAP animations
-    const script = document.createElement("script")
-    script.src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
-    script.async = true
-    document.body.appendChild(script)
-
-    return () => {
-      document.body.removeChild(script)
-    }
   }, [])
 
   const heroRef = useRef<HTMLElement | null>(null);
@@ -82,4 +74,3 @@ export default function Home() {
     </main>
   )
 }
-
