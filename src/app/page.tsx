@@ -47,27 +47,27 @@ export default function Home() {
       <GSAPInit />
 
       <section ref={heroRef} id="hero">
-        <Hero />
+        <Hero onNavClick={scrollToSection}/>
       </section>
 
       <section ref={aboutRef} id="about">
-        <About />
+        <About onNavClick={scrollToSection}/>
       </section>
 
       <section ref={whyChooseUsRef} id="why-choose-us">
-        <WhyChooseUs />
+        <WhyChooseUs onNavClick={scrollToSection}/>
       </section>
 
       <section ref={servicesRef} id="services">
-        <Services />
+        <Services onNavClick={scrollToSection}/>
       </section>
 
       <section ref={clientJourneyRef} id="client-journey">
-        <ClientJourney />
+        <ClientJourney onNavClick={scrollToSection}/>
       </section>
 
       <section ref={contactRef} id="contact">
-        <Contact />
+        <Contact onNavClick={scrollToSection} />
       </section>
 
       <Footer onNavClick={scrollToSection} />

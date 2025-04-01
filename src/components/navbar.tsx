@@ -21,16 +21,20 @@ const Navbar = ({ onNavClick }: { onNavClick: (section: string) => void }) => {
 
       // Determine active section based on scroll position
       const sections = ["hero", "about", "whyChooseUs", "services", "clientJourney", "contact"]
-      for (const section of sections.reverse()) {
+      let currentSection = "hero"
+      
+      for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
           const rect = element.getBoundingClientRect()
-          if (rect.top <= 100) {
-            setActiveSection(section)
+          // Check if we're in the section (more flexible range)
+          if (rect.top <= 150 && rect.bottom >= -150) {
+            currentSection = section
             break
           }
         }
       }
+      setActiveSection(currentSection)
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -116,6 +120,7 @@ const Navbar = ({ onNavClick }: { onNavClick: (section: string) => void }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3, delay: 0.6 }}
+            onClick={() => handleNavClick('contact')}
           >
             Get Started
           </motion.button>
@@ -153,6 +158,7 @@ const Navbar = ({ onNavClick }: { onNavClick: (section: string) => void }) => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
+                onClick={() => handleNavClick('contact')}
               >
                 Get Started
               </motion.button>
@@ -165,4 +171,3 @@ const Navbar = ({ onNavClick }: { onNavClick: (section: string) => void }) => {
 }
 
 export default Navbar
-

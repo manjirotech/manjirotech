@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import { motion, useInView, useAnimation } from "framer-motion"
 import styles from "./about.module.css"
 
-const About = () => {
+const About = ({ onNavClick }: { onNavClick: (section: string) => void }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.2 })
   const controls = useAnimation()
@@ -149,21 +149,21 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
         >
           <div className={styles.statItem}>
-            <div className={styles.statValue}>100+</div>
+            <div className={styles.statValue}>5+</div>
             <div className={styles.statLabel}>Happy Clients</div>
           </div>
 
           <div className={styles.statDivider}></div>
 
           <div className={styles.statItem}>
-            <div className={styles.statValue}>250+</div>
+            <div className={styles.statValue}>10+</div>
             <div className={styles.statLabel}>Projects Completed</div>
           </div>
 
           <div className={styles.statDivider}></div>
 
           <div className={styles.statItem}>
-            <div className={styles.statValue}>5+</div>
+            <div className={styles.statValue}>1+</div>
             <div className={styles.statLabel}>Years Experience</div>
           </div>
         </motion.div>
@@ -173,4 +173,3 @@ const About = () => {
 }
 
 export default About
-

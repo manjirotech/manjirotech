@@ -4,7 +4,7 @@ import { useRef, useEffect } from "react"
 import { motion, useInView, useScroll, useTransform, useAnimation } from "framer-motion"
 import styles from "./client-journey.module.css"
 
-const ClientJourney = () => {
+const ClientJourney = ({ onNavClick }: { onNavClick: (section: string) => void }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.2 })
   const controls = useAnimation()
@@ -190,6 +190,7 @@ const ClientJourney = () => {
               scale: 1.05,
             }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => onNavClick('contact')}
           >
             Get Started Now
             <svg
@@ -215,4 +216,3 @@ const ClientJourney = () => {
 }
 
 export default ClientJourney
-

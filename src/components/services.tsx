@@ -20,7 +20,7 @@ const tabColors: Record<string, string> = {
 
 type TabKey = keyof typeof tabNames;
 
-const Services = () => {
+const Services = ({ onNavClick }: { onNavClick: (section: string) => void }) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.1 })
   const controls = useAnimation()
@@ -295,6 +295,7 @@ const Services = () => {
               scale: 1.05,
             }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => onNavClick('contact')}
           >
             Contact Us
             <svg
@@ -320,4 +321,3 @@ const Services = () => {
 }
 
 export default Services
-

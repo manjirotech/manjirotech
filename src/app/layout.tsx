@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 
 export const metadata: Metadata = {
-  title: "Manjiro Tech - Innovative Digital & IT Solutions",
+  title: "Manjiro Tech",
   description:
     "Elevate your brand with Manjiro Tech. We provide innovative digital & IT solutions designed to drive results.",
   icons: {

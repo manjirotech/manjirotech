@@ -6,7 +6,7 @@ import styles from "./hero.module.css"
 import ManjiroLogo from "@/assets/Manjiro_Tech_Logo.png"
 import Image from "next/image"
 
-const Hero = () => {
+const Hero = ({ onNavClick }: { onNavClick: (section: string) => void }) => {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -127,7 +127,7 @@ const Hero = () => {
         </motion.h1>
 
         <div className={styles.subtextContainer}>
-          <p className={styles.subtext}>Innovative Digital & IT Solutions Designed to Drive Results</p>
+          <p className={styles.subtext}>Innovative Digital & IT Solutions</p>
         </div>
 
         <motion.div
@@ -144,6 +144,7 @@ const Hero = () => {
               scale: 1.05,
             }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => onNavClick('contact')}
           >
             Get Started
             <svg
@@ -170,6 +171,7 @@ const Hero = () => {
               scale: 1.05,
             }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => onNavClick('services')}
           >
             Learn More
           </motion.button>
@@ -192,4 +194,3 @@ const Hero = () => {
 }
 
 export default Hero
-

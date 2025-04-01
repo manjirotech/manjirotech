@@ -4,7 +4,11 @@ import { useRef, useState, useEffect } from "react"
 import { motion, useInView, useAnimation } from "framer-motion"
 import styles from "./contact.module.css"
 
-const Contact = () => {
+interface ContactProps {
+  onNavClick: (section: string) => void;
+}
+
+const Contact = ({ onNavClick }: ContactProps) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.2 })
   const controls = useAnimation()
@@ -47,9 +51,13 @@ const Contact = () => {
 
   const socialLinks = [
     { name: "LinkedIn", icon: "in", color: "#0077B5" },
-    { name: "Twitter", icon: "X", color: "#1DA1F2" },
-    { name: "Instagram", icon: "IG", color: "#E1306C" },
-    { name: "Facebook", icon: "f", color: "#4267B2" },
+    { name: "Twitter", icon: "X", color: "#000000" },
+    { 
+      name: "Instagram", 
+      icon: "IG", 
+      color: "#E1306C"
+    },
+    // { name: "Facebook", icon: "f", color: "#4267B2" },
   ]
 
   const containerVariants = {
@@ -333,4 +341,3 @@ const Contact = () => {
 }
 
 export default Contact
-

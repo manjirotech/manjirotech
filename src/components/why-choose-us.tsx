@@ -4,7 +4,11 @@ import { useRef, useState, useEffect } from "react"
 import { motion, useInView, AnimatePresence, useAnimation } from "framer-motion"
 import styles from "./why-choose-us.module.css"
 
-const WhyChooseUs = () => {
+interface WhyChooseUsProps {
+  onNavClick: (section: string) => void;
+}
+
+const WhyChooseUs = ({ onNavClick }: WhyChooseUsProps) => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: false, amount: 0.2 })
   const controls = useAnimation()
@@ -21,33 +25,34 @@ const WhyChooseUs = () => {
   const reasons = [
     {
       icon: "🚀",
-      title: "Tailored Strategies for Your Business",
-      description: "We create custom solutions that align perfectly with your business goals and target audience.",
+      title: "Tailored Solutions for Your Business",
+      description: "We create custom strategies that fit your unique goals, ensuring the best results for your brand.",
       animation: "underline",
       color: "#4A90E2",
     },
     {
-      icon: "🌟",
-      title: "Creative & Tech-Savvy Execution",
-      description: "Our team combines creativity with technical expertise to deliver outstanding results.",
+      icon: "💡",
+      title: "Creative & Technology-Driven Approach",
+      description: "We combine creativity with the latest technology to help your business stand out and grow.",
       animation: "scale",
       color: "#50E3C2",
     },
     {
-      icon: "💡",
-      title: "Data-Driven Approach for Maximum ROI",
-      description: "We use analytics and insights to optimize your strategies for the best possible returns.",
+      icon: "🔒",
+      title: "Reliable & Transparent Service",
+      description: "We believe in clear communication, honest work, and delivering exactly what we promise—no hidden surprises.",
       animation: "glow",
       color: "#F5A623",
     },
     {
-      icon: "🤝",
-      title: "Collaborative & Transparent Workflow",
-      description: "We work closely with you at every step, ensuring clear communication and shared vision.",
+      icon: "🌍",
+      title: "All-in-One Digital Solution",
+      description: "With 40+ services, we cover everything from marketing and design to web development and media, so you get everything in one place.",
       animation: "shake",
       color: "#D0021B",
     },
-  ]
+  ];
+
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -204,6 +209,7 @@ const WhyChooseUs = () => {
               scale: 1.05,
             }}
             whileTap={{ scale: 0.98 }}
+            onClick={() => onNavClick('contact')}
           >
             Get Started Now
             <svg
@@ -229,4 +235,3 @@ const WhyChooseUs = () => {
 }
 
 export default WhyChooseUs
-
